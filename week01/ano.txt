@@ -1,0 +1,57 @@
+Git
+    Version Control Tool
+    Command Line Tool to keep track of changes of code
+    Synchronizes Code between different people
+
+    Push to server, pull from server
+
+
+Example of command sequence:
+    ●   https://www.github.com/new
+        ↳ Create new repository
+
+    ●   git clone <url>
+        ↳ Copy new repository from server to local computer
+
+    ●   git add <filename>
+        ↳ git add *
+
+    ●   git commit -m "message"
+        ↳ message = description of what changes you made (note to self)
+
+    ●   git status
+        ↳ What is currently happening in my repository?
+
+    ●   git push
+
+    ●   git commit -am "message"
+        ↳ Add all files changed and commit with message
+        ↳ Combine 'add step' and 'commit step'
+
+    ●   git pull
+
+
+    ●   git log
+        ↳ show history of commits
+
+    ●   git reset
+        ↳   revert repository back
+        ↳   git reset --hard <commit>
+                <commit> is the hash of the commit exibit in "git log"
+        ↳   git reset --hard origin/master
+
+
+    ●   git branch
+        ↳ tells what branch I'm currently on
+
+    ●   git checkout -b <name of new branch>
+        ↳ creates and switch to the new branch
+
+    ●   git checkout <name of branch>
+        ↳ switch between branches
+
+    ●   git merge <name of branch>
+        ↳ Merge <name of branch> into actual branch
+        ↳ use 'git commit' after resolving merge conflicts
+    
+

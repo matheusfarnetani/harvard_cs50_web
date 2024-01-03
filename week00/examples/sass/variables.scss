@@ -1,0 +1,15 @@
+$color: red;
+
+ul {
+    font-size: 14px;
+    color: $color;
+}
+
+ol {
+    font-size: 18px;
+    color: $color;
+}
+
+// To compile file: sass file.scss:newfile.css
+// To watch file and auto update newfile.css: sass --watch file.scss:newfile.css
+

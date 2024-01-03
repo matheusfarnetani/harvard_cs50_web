@@ -1,0 +1,299 @@
+// Variables - Colors
+$bg-color: #202124;
+$white: #e8eaed;
+$black: #171717;
+$grey-light: #bdc1c6;
+$grey: #5f6368;
+$grey-dark: #303134;
+$blue: #2f5bb7;
+$blue2:#357ae8;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Base reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+
+    /* Set font size for easy rem calculations
+       * default document font size = 16px, 1rem = 16px, 100% = 16px
+       * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+      */
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: $bg-color;
+}
+
+/* A few media query to set some font sizes at different screen sizes.
+     * This helps automate a bit of responsiveness.
+     * The trick is to use the rem unit for size values, margin and padding.
+     * Because rem is relative to the document font size
+     * when we scale up or down the font size on the document
+     * it will affect all properties using rem units for the values.
+    */
+
+/* I am using the em unit for breakpoints
+     * The calculation is the following
+     * screen size divided by browser base font size
+     * As an example: a breakpoint at 980px
+     * 980px / 16px = 61.25em
+    */
+
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+    html {
+        font-size: 60%;
+    }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+    html {
+        font-size: 58%;
+    }
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+    html {
+        font-size: 55%;
+    }
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: $blue;
+    text-decoration: none;
+}
+
+a:hover {
+    color: $blue2;
+    text-decoration: underline;
+}
+
+header {
+    top: 0;
+    min-height: 7vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    width: 100%;
+}
+
+#navbar {
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin-right: 45px;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-content: center;
+        gap: 3rem;
+
+        li {
+            a {
+                color: $white;
+            }
+        }
+    }
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    height: 70vh;
+
+    #logotype {
+        color: $white;
+        margin-bottom: 10px;
+        display: flex;
+        gap: 10px;
+        align-items: baseline;
+
+        #logotype-primary {
+            font-weight: bold;
+            font-size: 7rem;
+        }
+
+        #logotype-secondary {
+            font-weight: lighter;
+            font-size: 4rem;
+        }
+    }
+
+    span {
+        color: $white;
+    }
+
+    form {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        max-width: 500px;
+
+        .search-bar {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            height: 4rem;
+            min-width: 450px;
+            background-color: $bg-color;
+            color: $white;
+            border: 1.5px solid $grey;
+            padding-left: 20px;
+            border-radius: 3em;
+            font-size: 1.8rem;
+            text-align: left;
+        }
+
+        i {
+            color: $white;
+            font-size: 1.6rem;
+            margin: auto 0;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 55px);
+            margin-left: 15px;
+            background-color: $bg-color;
+            color: $white;
+            border: none;
+
+        }
+
+        input[type="text"]:focus {
+            border: none;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            margin: 30px auto 0 auto;
+            height: 4rem;
+            min-width: 200px;
+            background-color: $blue;
+            border: none;
+            border-radius: 3em;
+            color: $white;
+            font-size: 2rem;
+            font-weight: lighter;
+        }
+
+        input[type="submit"]:hover {
+            background-color: $blue2;
+            border: none;
+        }
+    }
+}
+
+#main-advanced {
+    .label-advanced {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: $white;
+        width: 700px;
+        margin-bottom: 10px;
+    }
+
+    form {
+        max-width: 700px;
+        gap: 15px;
+
+        fieldset {
+            width: 100%;
+            display: flex;
+            flex: row;
+            justify-content: space-between;
+            align-items: center;
+            border: none;
+
+            label {
+                color: $white;
+                font-size: 1.6rem;
+                font-weight: 400;
+                width: 200px;
+                text-align: start;
+            }
+        }
+
+        input[type="submit"] {
+            border: none;
+            background-color: $blue;
+            color: $white;
+        }
+
+        input[type="submit"]:hover {
+            background-color: $blue2;
+            border: none;
+        }
+    }
+}
+
+#about {
+    font-size: 1.4rem;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    min-height: 7vh;
+    width: 100%;
+    background-color: $black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+        font-size: 1.4rem;
+        font-weight: 300;
+        color: $white;
+        margin-left: 45px;
+    }
+
+    #lower-navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        align-items: center;
+        font-weight: 400;
+        font-size: 1.4rem;
+        margin-right: 45px;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-content: center;
+            gap: 3rem;
+
+            li {
+                a {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
